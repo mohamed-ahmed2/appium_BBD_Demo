@@ -8,7 +8,7 @@ import tests.TestBase;
 
 import java.net.MalformedURLException;
 
-public class LoginStepDefinitions extends TestBase {
+public class InvalidLoginStepDefinitions extends TestBase {
 
 
     LoginPage loginPage;
