@@ -1,4 +1,8 @@
-Feature: Card
+Feature: Add to Card
+
+  Background: user is logged in
+    Given   user is a logged in user
+
   @Add_one_item_to_card
   Scenario: Add item to card
     Given the user in Home page

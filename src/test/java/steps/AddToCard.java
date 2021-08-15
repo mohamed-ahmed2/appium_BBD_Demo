@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import tests.TestBase;
 
 import java.net.MalformedURLException;
@@ -17,8 +18,10 @@ public class AddToCard extends TestBase {
     LoginPage loginPage;
     HomePage homePage;
 
-    @Before
-    public void login() throws MalformedURLException {
+// Background
+
+    @Given("user is a logged in user")
+    public void theUserIsALoggedInUser() throws MalformedURLException {
         Setup();
         loginPage = new LoginPage(driver);
         loginPage.enterusername("standard_user");
@@ -29,6 +32,7 @@ public class AddToCard extends TestBase {
     // Add one element to card
     @Given("the user in Home page")
     public void theUserInHomePage() {
+
         homePage = new HomePage(driver);
         homePage.waitForVisibility(homePage.products_text);
     }
@@ -62,17 +66,12 @@ public class AddToCard extends TestBase {
 
     @When("he clicks on Add button for more than one item")
     public void heClicksOnAddButtonForMoreThanItem() {
-
         homePage.click(homePage.addToCard_Button);
         homePage.click(homePage.addToCard_Button2);
         for (int i = 0; i < 3; i++) {
             if (homePage.isElementDisplayed(homePage.addToCard_Button)){
                 homePage.click(homePage.addToCard_Button);
-            }
-            else if(homePage.isElementDisplayed(homePage.addToCard_Button)){
-                homePage.click(homePage.addToCard_Button);
-            }
-            else {
+            } else {
                 homePage.scroll();
             }
         }
