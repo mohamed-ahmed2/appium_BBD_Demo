@@ -25,10 +25,6 @@ public class HomePage extends PageBase{
     public MobileElement remove_button;
 
 
-    public By setCard_counter(int counter){
-        By Card_button = By.xpath("//android.widget.TextView[@text='"+Integer.toString(counter)+"')]");
-        return Card_button;
-    }
 
 
 }
