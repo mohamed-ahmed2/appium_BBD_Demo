@@ -35,7 +35,12 @@ public class PageBase {
         wait.until(ExpectedConditions.visibilityOf(element));
 
     }
+    public void waitForDisappear(MobileElement element) {
 
+        WebDriverWait wait = new WebDriverWait(driver, Waitime);
+        wait.until(ExpectedConditions.invisibilityOf(element));
+
+    }
     public void enterText(MobileElement element, String text) {
 
         waitForVisibility(element);
@@ -73,7 +78,7 @@ public class PageBase {
         int height = dimension.getHeight();
         int scrollStart = (int) (height * 0.8);
         int scrollEnd = (int) (height * 0.1);
-        TouchAction touch = new TouchAction(driver).press(PointOption.point(0, scrollStart)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(4))).moveTo(PointOption.point(0, scrollEnd)).release().perform();
+        TouchAction touch = new TouchAction(driver).press(PointOption.point(0, scrollStart)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2))).moveTo(PointOption.point(0, scrollEnd)).release().perform();
         return touch;
     }
 
