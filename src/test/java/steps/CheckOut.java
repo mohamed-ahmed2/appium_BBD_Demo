@@ -55,7 +55,9 @@ public class CheckOut extends TestBase {
         }
         checkoutOverviewPage.clickOnFinish();
         Thread.sleep(200);
-            Assert.assertFalse(checkoutOverviewPage.isElementDisplayed(checkoutOverviewPage.finish_button));
+            CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
+        boolean elementDisplayed = checkoutCompletePage.isElementDisplayed(checkoutCompletePage.thank_you_text);
+        Assert.assertTrue(elementDisplayed);
 
-        }
+    }
 }
