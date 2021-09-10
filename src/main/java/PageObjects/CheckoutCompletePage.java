@@ -13,5 +13,4 @@ public class CheckoutCompletePage extends PageBase{
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='THANK YOU FOR YOU ORDER']")
     public MobileElement thank_you_text;
 
-    //THANK YOU FOR YOU ORDER
-}
+ }
