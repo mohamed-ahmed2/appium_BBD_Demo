@@ -58,6 +58,8 @@ public class CheckOut extends TestBase {
             CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage(driver);
         boolean elementDisplayed = checkoutCompletePage.isElementDisplayed(checkoutCompletePage.thank_you_text);
         Assert.assertTrue(elementDisplayed);
+        checkoutCompletePage.scroll();
+        checkoutCompletePage.click(checkoutCompletePage.backHome_button);
 
     }
 }

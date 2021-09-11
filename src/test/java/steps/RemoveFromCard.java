@@ -86,17 +86,6 @@ public class RemoveFromCard extends TestBase{
             homePage.click(homePage.remove_button);
 
 
-
-        /*
-        for (int i = 0; i < 3; i++) {
-            if (homePage.isElementDisplayed(homePage.remove_button)){
-                homePage.click(homePage.remove_button);
-            } else {
-                homePage.scrollup();
-            }
-        }
-**/
-
     }
 
 

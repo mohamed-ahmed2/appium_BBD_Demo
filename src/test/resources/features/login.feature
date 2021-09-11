@@ -20,4 +20,4 @@ Feature: login
     Examples:
       |username|pass|
       |standard_user|secret_sauce|
-      |problem_user|secret_sauce|
+
